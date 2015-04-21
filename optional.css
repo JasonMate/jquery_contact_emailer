@@ -1,0 +1,57 @@
+@charset "utf-8";
+/* ======================= RESET STYLES ======================= */
+body{ margin: 0; padding: 40px; color: #333; font-size: 18px; }
+
+/* ======================= FORM STYLES ======================= */
+#contact-form { 
+  position: relative;
+  width: 600px;
+  margin: 20px 0;
+  overflow:inherit;
+  padding-bottom: 35px;
+}
+
+#contact-form input {
+  padding: 1%;
+  border: 1px solid #333;
+  margin: 5px 0;  
+}
+
+#contact-form #name, #contact-form #email {
+  width: 98%; 
+}
+
+#contact-form textarea {
+  width: 98%; 
+  padding: 1%;
+  height: 200px; 
+  border: 1px solid #333;
+  overflow: auto;
+}
+
+#contact-form .submit {
+  padding: 5px;
+  margin-top: 5px;
+  float: left;
+  cursor: pointer;
+  display: block; 
+}
+
+/* status messages  */
+#status-message {
+  position: absolute;
+  height: 40px;
+  bottom: 0;
+  width: 100%;
+  display: none;  
+}
+
+.success {
+  text-align: center;
+  color: #609647;  
+}
+
+.error {
+  text-align: center;
+  color: #B93133;  
+}

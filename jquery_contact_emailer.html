@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery Contact Emailer</title>
+<link rel="stylesheet" type="text/css" href="optional.css">
+</head>
+
+<body>
+<!-- ******************************* INFORMATION ******************************* -->
+<h1>jQuery Contact Emailer</h1><hr/>
+
+<!-- *******************************  AJAX FORM  ******************************* -->
+<form id="contact-form" method="POST">
+  
+  <h2>Contact Form</h2>
+  <div>
+  <label for="name">Your Name:</label>
+  <input id="botstomper" type="text" name="lname" autocomplete="off" style="height:0;width:0;opacity:0;"/><br>
+  <input id="name" type="text" name="name" required><br>       
+  </div>
+  
+  <div>
+  <label for="email">Email Address:</label><br>
+  <input id="email" type="email" name="email" required><br>
+  </div>
+  
+  <div>
+  <label for="message">Message:</label><br>
+  <textarea id="message" name="message" required></textarea><br/>
+  </div>
+           
+  <input id="contact_submit" class="submit" type="submit" value="Submit">
+
+  <!-- error handeling -->
+  <div id="status-message"></div>  
+</form><br/>
+
+<!-- jquery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+<!-- post script -->
+<script>
+$(document).ready(function() { 
+    $("#contact_submit").on('click', function(e) {
+        e.preventDefault();
+        
+        var name = $('#name').val();
+        var email = $('#email').val();
+        var message = $('#message').val();
+        var lname = $('#botstomper').val();
+    
+        // UPDATE PATH BELOW
+        $.post('contact_emailer.php', {name: name, email: email, message: message, lname: lname }, function(result) {
+          
+            $("#contact-form")[0].reset();
+            $('#status-message').html(result);
+            $('#status-message').css('display', 'block');   
+            //$('#status-message').delay(3000).fadeOut('fast'); 
+                
+        });
+    });
+});
+</script>
+</body>
+</html>
