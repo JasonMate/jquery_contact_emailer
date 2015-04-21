@@ -1,7 +1,7 @@
 <?php 
 # ******************************************************************
 # Title: jquery Contact Emailer
-# Author: Jason Mate
+# Author: Jason Mate and Matt Brown
 # Contact: (jmate421@gmail.com)
 # *******************************************************************
 
